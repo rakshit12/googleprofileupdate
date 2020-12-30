@@ -1,0 +1,270 @@
+{% load socialaccount %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Google Registration</title>
+  </head>
+  <style>
+  a {
+    display: inherit;
+    text-decoration: none;
+}
+	.profile-pic{
+		max-width: 200px;
+		max-height:200px;
+		margin: 0 auto;
+		border-radius: 50%;
+	}
+  .signup-w3ls {
+    width: 50%;
+    margin: 70px 25% 80%;
+    padding: 0;
+    display: table;
+    position: relative;
+}
+.signup-agile1{
+    width:100%;
+    float:center;
+}
+
+.signup-w3ls .signup-agile1 .form-control {
+    margin-bottom: 20px;
+}
+label.header {
+    font-size: 16px;
+    font-weight: 500;
+    width: 215px;
+    color: grey;
+    margin-right:10px;
+    text-align:justify;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline-block;
+    font-family: 'Nunito', sans-serif;
+}
+input#image,input#store_name, input#store_type,input#owner_type, input#website,input#contact_number,input#contact_email {
+    padding:0 40px;
+    width:40%;
+    height:55px;
+    border: 1px solid #dadada;
+    color: grey;
+    text-align:justify;
+    outline: none;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight:normal;
+    font-family: 'Muli', sans-serif;
+    border-radius:30px;
+    -webkit-border-radius:30px;
+    -moz-border-radius:30px;
+    -o-border-radius:30px;
+    -ms-border-radius:30px; 
+}
+input#image:focus,input#store_name:focus, input#store_type:focus,input#owner_type:focus, input#website:focus,input#contact_number:focus,input#contact_email:focus  {
+    background-color:#f5f8fa !important;
+    border:1px solid #dadada;
+}
+input::-webkit-input-placeholder {
+color: grey;
+} 
+input:-moz-placeholder { /* Firefox 18- */
+color: grey;  
+} 
+input::-moz-placeholder {  /* Firefox 19+ */
+color: grey;  
+} 
+input:-ms-input-placeholder {  
+color: grey;  
+}
+.register {
+    background-color: lightgreen;
+    width: 52%;
+    height: 55px;
+    border: none;
+    margin-left: 233px;
+    cursor: pointer;
+    color: #fff;
+    outline: none;
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -o-border-radius: 30px;
+    -ms-border-radius: 30px;
+    font-family: 'Muli', sans-serif;
+}   
+.register:hover {
+    background-color:#36b051;
+    color:#fff;
+}
+.signup-w3ls {
+    width: 50%;
+    margin: 70px 25% 80%;
+    padding: 0;
+    display: table;
+    position: relative;
+}
+.signup-agile1{
+    width:100%;
+    float:center;
+}
+
+.signup-w3ls .signup-agile1 .form-control {
+    margin-bottom: 20px;
+}
+label.header {
+    font-size: 16px;
+    font-weight: 500;
+    width: 215px;
+    color: grey;
+    margin-right:10px;
+    text-align:justify;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline-block;
+    font-family: 'Nunito', sans-serif;
+}
+input#image,input#store_name, input#store_type,input#owner_type, input#website,input#contact_number,input#contact_email {
+    padding:0 40px;
+    width:40%;
+    height:55px;
+    border: 1px solid #dadada;
+    color: grey;
+    text-align:justify;
+    outline: none;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight:normal;
+    font-family: 'Muli', sans-serif;
+    border-radius:30px;
+    -webkit-border-radius:30px;
+    -moz-border-radius:30px;
+    -o-border-radius:30px;
+    -ms-border-radius:30px; 
+}
+input#image:focus,input#store_name:focus, input#store_type:focus,input#owner_type:focus, input#website:focus,input#contact_number:focus,input#contact_email:focus  {
+    background-color:#f5f8fa !important;
+    border:1px solid #dadada;
+}
+input::-webkit-input-placeholder {
+color: grey;
+} 
+input:-moz-placeholder { /* Firefox 18- */
+color: grey;  
+} 
+input::-moz-placeholder {  /* Firefox 19+ */
+color: grey;  
+} 
+input:-ms-input-placeholder {  
+color: grey;  
+}
+.register {
+    background-color: lightgreen;
+    width: 52%;
+    height: 55px;
+    border: none;
+    margin-left: 233px;
+    cursor: pointer;
+    color: #fff;
+    outline: none;
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -o-border-radius: 30px;
+    -ms-border-radius: 30px;
+    font-family: 'Muli', sans-serif;
+}   
+.register:hover {
+    background-color:#36b051;
+    color:#fff;
+}
+.col-md-3 {
+    margin: auto;
+}
+.register {
+    display: inherit;
+    margin: auto;
+    width:30%;
+}
+</style>
+  <body>
+
+  
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Google Login</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  {% if user.is_authenticated %}
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="/account">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href='/profile'>Profile</a>
+      </li>
+
+      <li class="nav-item ">
+        <a class="nav-link" href='/post'>Posts</a>
+      </li>
+    <li class="nav-item ">
+    <form method='POST' action="{% url 'logoutuser' %}" class='ml-3' >
+         {% csrf_token %}
+      <button type='submit' class='btn btn-dark'>Logout</button></form>
+  </li>
+     </ul>
+     </div>
+
+</nav>
+  <h1 align='center'>Welcome, {{ user.username }} !</h1>
+  
+<br>
+<div class="row">
+	<div class="col-md-3" align='center'>
+		<div class="card card-body">
+			<hr>
+			<h3 style="text-align: center">Welcome</h3>
+			<hr>
+			<img class="profile-pic" src="{{request.user.customer.profile_pic.url}}" >
+		  
+		</div>
+	</div>
+  </div>
+          
+        </form>
+    </div>
+</div>
+  <a   href='/profile'><input  class="register" type="button" value="Get Started"> </a> 
+
+  {% else %}
+     </div>
+
+</nav>
+ <div class="alert alert-danger" role="alert">
+   <a href="{% provider_login_url 'google' %}" class="alert-link">Clike Here</a>Login with Google Accounts.
+</div>
+  {% endif %}
+  
+
+

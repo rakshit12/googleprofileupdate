@@ -1,0 +1,172 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Google Registration</title>
+  </head>
+  <style>
+  .container {
+    text-align: center;
+    padding: 10px;
+  }
+    .profile-pic{
+		max-width: 200px;
+		max-height:200px;
+		margin: 0 auto;
+		border-radius: 50%;
+	}
+    .btn {
+  transition-duration: 0.4s;
+}
+
+.btn:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+.register {
+    background-color: lightgreen;
+    width: 52%;
+    height: 55px;
+    border: none;
+    margin-left: 233px;
+    cursor: pointer;
+    color: #fff;
+    outline: none;
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -o-border-radius: 30px;
+    -ms-border-radius: 30px;
+    font-family: 'Muli', sans-serif;
+}   
+.register:hover,{
+    background-color:#36b051;
+    color:#fff;
+}
+#id_name:focus,#id_phone:focus,#id_email:focus {
+  ~ #id_name,#id_phone,#id_email {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: $primary;
+    font-weight:700;    
+  }
+  padding-bottom: 6px;  
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, $primary,$secondary);
+  border-image-slice: 1;
+}
+/* reset input */
+#id_name,#id_email,#id_phone{
+  &:required,&:invalid { box-shadow:none; }
+}
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+}
+
+#id_name,#id_email,#id_phone{
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid $gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: $white;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+}
+#id_profile_pic {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#id_profile_pic:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#id_profile_pic {
+    color: brown;
+    background: gainsboro;
+    border-radius: 53px;
+}
+label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: $gray;
+}
+  </style>
+  <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="/account">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href='/profile'>Profile</a>
+      </li>
+
+      <li class="nav-item ">
+        <a class="nav-link" href='/post'>Posts</a>
+      </li>
+    <li class="nav-item ">
+    <form method='POST' action="{% url 'logoutuser' %}" class='ml-3' >
+         {% csrf_token %}
+      <button type='submit' class='btn btn-dark'>Logout</button></form>
+  </li>
+     </ul>
+     </div>
+
+</nav>
+  <div class='container'>
+  <div class="row">
+	<div class="col-md-3">
+		<div class="card card-body">
+			<hr>
+			<img class="profile-pic" src="{{request.user.customer.profile_pic.url}}" >
+		  
+		</div>
+	</div>
+    <div>
+  <h2> {{ user.username }} Details</h2>
+ <form method = "post" enctype="multipart/form-data"  action='' > 
+        {% csrf_token %} 
+        {{ form2.as_p }} 
+        <button  class='btn'type="submit">Upload</button> 
+    </form>
+     <a   href='/post'><input  class="register" type="button" value="Get Started"> </a> 
+    </body>
+    </div>
+    </html>
